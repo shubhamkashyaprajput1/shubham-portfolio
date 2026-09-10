@@ -20,12 +20,12 @@
 	--ease: cubic-bezier(.2, .7, .3, 1);
 }
 .bg-color-black {
+	background-image: url(../images/hero-section.jpg) !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 	background-position: top center;
 	background-attachment: fixed;
-	background-image: url(../images/hero-section.jpg) !important;
 }
 
 * {
