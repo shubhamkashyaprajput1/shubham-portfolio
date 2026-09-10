@@ -108,8 +108,13 @@
 	.home-info h2{
 		font-size: 22px;
 	}
+	.section-head .eyebrow{
+		font-size: 25px;
+	}
+	.section-head h2{
+		font-size: 18px;
+	}
 }
-
 
 @media (prefers-reduced-motion: reduce) {
 	html {
