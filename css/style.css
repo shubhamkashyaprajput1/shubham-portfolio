@@ -19,6 +19,14 @@
 	--shadow-card-hover: 0 18px 34px -16px rgba(40, 30, 15, 0.24);
 	--ease: cubic-bezier(.2, .7, .3, 1);
 }
+.bg-color-black {
+	background-image: url(../images/hero-section.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	background-position: top center;
+	background-attachment: fixed;
+}
 
 * {
 	box-sizing: border-box;
@@ -1562,15 +1570,6 @@ a.contact-chip:hover {
 :focus-visible {
 	outline: 2px solid var(--accent-2);
 	outline-offset: 2px;
-}
-
-.bg-color-black {
-	background-image: url(../images/hero-section.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-	background-position: top center;
-	background-attachment: fixed;
 }
 
 .bg-color-black::before {
