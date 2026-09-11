@@ -107,7 +107,9 @@
 		margin: 0 auto;
         margin-bottom: 20px;
 	}
-	.home-info h2{
+	.home-info h2,
+	footer.footer-dark h2,
+	.eyebrow-dark {
 		font-size: 22px;
 	}
 	.section-head .eyebrow{
