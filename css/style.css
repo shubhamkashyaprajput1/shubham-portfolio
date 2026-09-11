@@ -314,8 +314,8 @@ nav.wrap {
 }
 
 .avatar-ring {
-	width: 180px;
-	height: 180px;
+	width: 215px;
+	height: 215px;
 	border-radius: 50%;
 	border: 1.5px solid var(--panel-border);
 	padding: 4px;
