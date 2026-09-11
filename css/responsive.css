@@ -104,6 +104,8 @@
 	.avatar-ring{
 		width: 270px;
         height: 270px;
+		margin: 0 auto;
+        margin-bottom: 20px;
 	}
 	.home-info h2{
 		font-size: 22px;
