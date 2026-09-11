@@ -130,3 +130,8 @@
 		animation: none;
 	}
 }
+@media (prefers-reduced-motion: reduce) {
+			.service-card-inner {
+				transition: none;
+			}
+		}
