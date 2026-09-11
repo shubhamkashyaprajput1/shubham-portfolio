@@ -965,6 +965,7 @@ nav.wrap {
 	justify-content: center;
 	margin-bottom: 16px;
 	transition: transform 0.3s var(--ease);
+	animation: zoomInOut 2.5s ease-in-out infinite;
 }
 
 .service-icon-lg svg {
@@ -1008,7 +1009,17 @@ nav.wrap {
 	font-size: 13.5px;
 	color: var(--text-dim);
 }
+@keyframes zoomInOut {
 
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.15);
+	}
+}
 /* ============ skills ============ */
 .skills-grid {
 	display: grid;
