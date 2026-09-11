@@ -39,7 +39,7 @@ html {
 
 body {
 	margin: 0;
-	background: var(--bg);
+	background: #dddddd99;
 	color: var(--text);
 	font-family: 'Inter', sans-serif;
 	font-size: 16px;
@@ -78,7 +78,7 @@ section {
 }
 
 .section-band {
-	background: var(--bg-tint);
+	background:var(--accent-2-soft);
 }
 
 /* ============ preloader ============ */
@@ -1585,5 +1585,5 @@ a.contact-chip:hover {
 }
 
 section#experience {
-	background: #dddddd99;
+	background-color: var(--accent-2-soft);
 }
