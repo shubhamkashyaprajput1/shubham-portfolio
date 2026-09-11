@@ -63,8 +63,8 @@ if (rotatorEl && !reduceMotion) {
 
 // services: click-to-flip too, for touch devices
 document.querySelectorAll('.service-card').forEach((card) => {
-	card.addEventListener('click', () => card.classList.toggle('is-flipped'));
-});
+			card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+		});
 
 // back to top
 const backToTop = document.getElementById('backToTop');
