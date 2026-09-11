@@ -933,7 +933,7 @@ nav.wrap {
 	width: 54px;
 	height: 54px;
 	border-radius: 14px;
-	background: var(--accent-soft);
+	background: var(--accent);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -948,7 +948,7 @@ nav.wrap {
 .service-icon-lg svg {
 	width: 24px;
 	height: 24px;
-	stroke: var(--accent-deep);
+	stroke: #fff;
 	fill: none;
 	stroke-width: 1.6;
 }
