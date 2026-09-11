@@ -1403,10 +1403,11 @@ footer.footer-dark h2 {
 
 .eyebrow-dark {
 	display: inline-block;
-	font-family: 'JetBrains Mono', monospace;
-	color: var(--accent);
-	font-size: 13px;
-	margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 900;
 }
 
 footer.footer-dark .lede {
