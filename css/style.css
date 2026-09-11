@@ -323,6 +323,7 @@ nav.wrap {
 	margin-bottom: 24px;
 	position: relative;
 	transition: border-color 0.3s var(--ease);
+	animation: floatUpDown 3s ease-in-out infinite;
 }
 
 .avatar-ring::before {
@@ -363,6 +364,14 @@ nav.wrap {
 	}
 }
 
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
 .home {
 
 	height: 100vh;
