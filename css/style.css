@@ -78,7 +78,7 @@ section {
 }
 
 .section-band {
-	background:var(--accent-2-soft);
+	background: var(--accent-2-soft);
 }
 
 /* ============ preloader ============ */
@@ -281,7 +281,7 @@ nav.wrap {
 .btn-ghost:hover {
 	border-color: var(--accent);
 	color: #fff;
-	background:var(--accent);
+	background: var(--accent);
 	transform: translateY(-2px);
 }
 
@@ -365,13 +365,17 @@ nav.wrap {
 }
 
 @keyframes floatUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-15px);
+	}
 }
+
 .home {
 
 	height: 100vh;
@@ -940,6 +944,7 @@ nav.wrap {
 	padding: 24px;
 	transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
+
 .service-face.front {
 	display: flex;
 	flex-direction: column;
@@ -1009,6 +1014,7 @@ nav.wrap {
 	font-size: 13.5px;
 	color: var(--text-dim);
 }
+
 @keyframes zoomInOut {
 
 	0%,
@@ -1020,6 +1026,7 @@ nav.wrap {
 		transform: scale(1.15);
 	}
 }
+
 /* ============ skills ============ */
 .skills-grid {
 	display: grid;
@@ -1072,7 +1079,7 @@ nav.wrap {
 
 .skill-icon-badge img {
 	width: 38px;
-    height: 38px;
+	height: 38px;
 }
 
 .skill-panel h3 {
@@ -1248,27 +1255,19 @@ nav.wrap {
 	color: var(--accent-2-soft);
 }
 
-.tab-btn.active:hover {
-	transform: none;
-}
-
 .portfolio-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
-	transition: opacity 0.2s ease;
-}
-
-.portfolio-grid.fading {
-	opacity: 0;
 }
 
 .portfolio-card {
 	background: var(--bg-elevated);
 	border: 1px solid var(--panel-border);
-	border-radius: 8px;
-	padding: 24px;
+	border-radius: 10px;
+	overflow: hidden;
 	box-shadow: var(--shadow-card);
+	cursor: pointer;
 	transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 
@@ -1282,7 +1281,216 @@ nav.wrap {
 	display: none;
 }
 
+.portfolio-thumb {
+	width: 100%;
+	aspect-ratio: 16/10;
+	overflow: hidden;
+	background: var(--bg-tint);
+	position: relative;
+}
+
+.portfolio-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.4s var(--ease);
+}
+
+.portfolio-card:hover .portfolio-thumb img {
+	transform: scale(1.05);
+}
+
+.portfolio-thumb::after {
+	content: 'Click to view details';
+	position: absolute;
+	inset: auto 0 0 0;
+	padding: 8px 14px;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 10.5px;
+	color: #fff;
+	background: linear-gradient(0deg, rgba(0, 0, 0, .55), transparent);
+	opacity: 0;
+	transition: opacity 0.25s var(--ease);
+}
+
+.portfolio-card:hover .portfolio-thumb::after {
+	opacity: 1;
+}
+
+.portfolio-body {
+	padding: 20px 22px 22px;
+}
+
 .portfolio-tag {
+	display: inline-block;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 11px;
+	color: var(--accent-2);
+	background: var(--accent-2-soft);
+	padding: 3px 10px;
+	border-radius: 999px;
+	margin-bottom: 12px;
+}
+
+.portfolio-card h3 {
+	font-size: 16.5px;
+	margin-bottom: 8px;
+}
+
+.portfolio-card p.blurb {
+	margin: 0;
+	font-size: 13px;
+	color: var(--text-dim);
+}
+
+/* hidden extra detail block - only read by JS for the lightbox, never shown on the card itself */
+.modal-extra {
+	display: none;
+}
+
+/* ============ lightbox modal ============ */
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(23, 19, 15, 0.6);
+	backdrop-filter: blur(3px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	z-index: 200;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.25s var(--ease), visibility 0.25s var(--ease);
+}
+
+.modal-overlay.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal-box {
+	background: var(--bg-elevated);
+	border-radius: 14px;
+	max-width: 640px;
+	width: 100%;
+	max-height: 88vh;
+	overflow-y: auto;
+	box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+	transform: translateY(16px) scale(0.98);
+	transition: transform 0.3s var(--ease);
+	position: relative;
+}
+
+.modal-overlay.open .modal-box {
+	transform: translateY(0) scale(1);
+}
+
+.modal-img-wrap {
+	position: relative;
+}
+
+.modal-img {
+	width: 100%;
+	aspect-ratio: 16/10;
+	object-fit: cover;
+	display: block;
+}
+
+.modal-nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid var(--panel-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--accent-2);
+	transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.modal-nav:hover {
+	background: #fff;
+	transform: translateY(-50%) scale(1.08);
+}
+
+.modal-nav.prev {
+	left: 14px;
+}
+
+.modal-nav.next {
+	right: 14px;
+}
+
+.modal-nav svg {
+	width: 18px;
+	height: 18px;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 2.2;
+}
+
+.modal-counter {
+	position: absolute;
+	bottom: 12px;
+	right: 14px;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 11px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 4px 10px;
+	border-radius: 999px;
+}
+
+.modal-content {
+	position: relative;
+	padding: 26px 52px 30px 28px;
+}
+
+.modal-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid var(--panel-border);
+	background: var(--bg-elevated);
+	color: var(--text-dim);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: border-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.modal-close:hover {
+	border-color: var(--accent);
+	color: var(--accent-deep);
+	transform: rotate(90deg);
+}
+
+.modal-close svg {
+	width: 15px;
+	height: 15px;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 2;
+}
+
+.modal-content h3 {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 21px;
+	margin: 0 0 4px;
+}
+
+.modal-tag {
 	display: inline-block;
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 11px;
@@ -1293,20 +1501,45 @@ nav.wrap {
 	margin-bottom: 14px;
 }
 
-.portfolio-card h3 {
-	font-size: 17px;
-	margin-bottom: 12px;
+.modal-content p.desc {
+	color: var(--text-dim);
+	font-size: 14.5px;
+	margin: 0 0 18px;
 }
 
-.portfolio-card ul {
-	margin: 0;
+.modal-content h4 {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 11.5px;
+	color: var(--text-dim);
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	margin: 0 0 10px;
+}
+
+.modal-content ul {
+	margin: 0 0 20px;
 	padding-left: 18px;
 	color: var(--text-dim);
-	font-size: 13.5px;
+	font-size: 14px;
 }
 
-.portfolio-card li {
+.modal-content li {
 	margin-bottom: 6px;
+}
+
+.modal-tools {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+}
+
+.modal-tools span {
+	font-size: 12px;
+	padding: 6px 10px;
+	border-radius: 6px;
+	background: rgba(38, 32, 26, 0.035);
+	border: 1px solid var(--panel-border);
+	color: var(--text-dim);
 }
 
 /* ============ education ============ */
@@ -1402,11 +1635,11 @@ footer.footer-dark h2 {
 
 .eyebrow-dark {
 	display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-    font-size: 32px;
-    margin-bottom: 10px;
-    font-weight: 900;
+	font-family: 'JetBrains Mono', monospace;
+	color: var(--accent);
+	font-size: 32px;
+	margin-bottom: 10px;
+	font-weight: 900;
 }
 
 footer.footer-dark .lede {
