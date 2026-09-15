@@ -1454,7 +1454,7 @@ footer.footer-dark .lede {
 a.contact-chip:hover {
 	border-color: var(--accent);
 	color: #fff;
-	background: rgba(221, 110, 31, 0.14);
+	background: var(--accent);
 }
 
 .footer-bottom {
