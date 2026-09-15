@@ -980,15 +980,6 @@ nav.wrap {
 	fill: none;
 	stroke-width: 1.6;
 }
-
-.service-card:nth-child(even) .service-icon-lg {
-	background: var(--accent-2-soft);
-}
-
-.service-card:nth-child(even) .service-icon-lg svg {
-	stroke: var(--accent-2);
-}
-
 .service-face.front h3 {
 	font-size: 15.5px;
 }
