@@ -280,8 +280,8 @@ nav.wrap {
 
 .btn-ghost:hover {
 	border-color: var(--accent);
-	color: var(--accent-deep);
-	background: var(--accent-soft);
+	color: #fff;
+	background:var(--accent);
 	transform: translateY(-2px);
 }
 
