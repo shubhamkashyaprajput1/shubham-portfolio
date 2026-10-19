@@ -37,7 +37,7 @@ navAnchors.forEach((a) => a.addEventListener('click', () => setActiveNav(a.datas
 /* ======================================================
    3. HERO ROLE ROTATOR — cycles the eyebrow text
    ====================================================== */
-const roles = ["Website Designer", "UI/UX Designer", "WordPress Specialist", "Figma Expert"];
+const roles = ["Website Designer", "WordPress Designer", "Figma Expert"];
 const rotatorEl = document.getElementById('roleRotator');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
