@@ -406,7 +406,7 @@ nav.wrap {
 	color: transparent;
 	-webkit-text-stroke: .7px #1dadf1;
 	animation: display-text 12s linear infinite;
-	animation-delay: calc(-4s * (4 - var(--i)));          
+	animation-delay: calc(-3s * var(--i));
 }
 
 .home-info h2 span::before,
