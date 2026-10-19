@@ -405,8 +405,8 @@ nav.wrap {
 	position: relative;
 	color: transparent;
 	-webkit-text-stroke: .7px #1dadf1;
-	animation: display-text 16s linear infinite;
-	animation-delay: calc(-4s * var(--i));
+	animation: display-text 12s linear infinite;
+	animation-delay: calc(-4s * (4 - var(--i)));          
 }
 
 .home-info h2 span::before,
@@ -436,7 +436,7 @@ nav.wrap {
 
 @keyframes display-text {
 
-	25%,
+	33.33%,
 	100% {
 		display: none;
 	}
